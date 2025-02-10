@@ -107,9 +107,27 @@
                 opacity: 1;
             }
         }
+        /* Splash Screen Styles */
+        #splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff; /* Background color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999; /* Ensure it is on top */
+        }
   </style>
  </head>
  <body class="bg-gray-100 text-gray-800">
+  <!-- Splash Screen -->
+  <div id="splash-screen">
+    <img src="assets/coffee.gif" alt="Loading..." />
+  </div>
+  
   <!-- Navbar -->
   <nav class="bg-[#6f4e37] p-4 fixed w-full z-10 top-0">
    <div class="container mx-auto flex justify-between items-center">
@@ -160,6 +178,7 @@
     </a>
    </div>
   </nav>
+  
   <script>
    document.getElementById('menu-button').addEventListener('click', function() {
         var menu = document.getElementById('mobile-menu');
@@ -184,7 +203,15 @@
     function scrollToTop() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+
+    // Remove splash screen after loading
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            document.getElementById('splash-screen').style.display = 'none';
+        }, 5000); // 5000 milliseconds = 5 seconds
+    });
   </script>
+  
   <!-- Hero Section -->
   <section class="relative h-screen flex items-center justify-center bg-cover bg-center pt-16" id="home" style="background-color: #6f4e37;">
    <img alt="Segelas coffee latte dengan seni latte yang indah" class="absolute inset-0 w-full h-full object-cover opacity-50" height="1080" src="assets/herobg.jpg" width="1920"/>
@@ -398,7 +425,7 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
      <div class="bg-[#6f4e37] p-6 rounded-lg shadow-lg text-center relative">
       <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#6f4e37] w-12 h-12 rounded-full flex items-center justify-center">
-       <img alt="Foto profil seorang pelanggan yang tersenyum" class="w-10 h-10 rounded-full" height="40" src="assets/coffeemaskot.jpg" width="40"/>
+       <img alt="Foto profil seorang pelanggan yang tersenyum" class="w-10 h-10 rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/wD5xWVpOgi-V9WNXuqfAkCBe3juMzxCy9WrKemFcjj8.jpg" width="40"/>
       </div>
       <h3 class="text-2xl font-bold mb-2 text-white mt-8">
        Aksara Gautama
@@ -421,7 +448,7 @@
      </div>
      <div class="bg-[#6f4e37] p-6 rounded-lg shadow-lg text-center relative">
       <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#6f4e37] w-12 h-12 rounded-full flex items-center justify-center">
-       <img alt="Foto profil seorang pelanggan yang tersenyum" class="w-10 h-10 rounded-full" height="40" src="assets/coffeemaskot.jpg" width="40"/>
+       <img alt="Foto profil seorang pelanggan yang tersenyum" class="w-10 h-10 rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/wD5xWVpOgi-V9WNXuqfAkCBe3juMzxCy9WrKemFcjj8.jpg" width="40"/>
       </div>
       <h3 class="text-2xl font-bold mb-2 text-white mt-8">
        Anumertas Laksana
@@ -444,7 +471,7 @@
      </div>
      <div class="bg-[#6f4e37] p-6 rounded-lg shadow-lg text-center relative">
       <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#6f4e37] w-12 h-12 rounded-full flex items-center justify-center">
-       <img alt="Foto profil seorang pelanggan yang tersenyum" class="w-10 h-10 rounded-full" height="40" src="assets/coffeemaskot.jpg" width="40"/>
+       <img alt="Foto profil seorang pelanggan yang tersenyum" class="w-10 h-10 rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/wD5xWVpOgi-V9WNXuqfAkCBe3juMzxCy9WrKemFcjj8.jpg" width="40"/>
       </div>
       <h3 class="text-2xl font-bold mb-2 text-white mt-8">
        Fanaya Bumantara
